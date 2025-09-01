@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>KACM Esports</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- ===== Header ===== -->
+    <header>
+        <img src="https://d.top4top.io/p_3528l07jw0.jpg" alt="KACM Logo" class="logo">
+        <h1>KACM Esports</h1>
+        <p>L’équipe Esports officielle de Marrakech</p>
+    </header>
+
+    <!-- ===== Navigation ===== -->
+    <nav>
+        <a href="#about">À propos</a>
+        <a href="#team">Équipe</a>
+        <a href="#contact">Contact</a>
+        <button class="join-btn" onclick="openModal()">Join the team</button>
+    </nav>
+
+    <!-- ===== About Section ===== -->
+    <section id="about">
+        <h2>À propos de KACM Esports</h2>
+        <p>
+            KACM Esports est une équipe passionnée de jeux vidéo basée à Marrakech. 
+            Nous participons à des tournois nationaux et internationaux sur différents jeux compétitifs.
+        </p>
+    </section>
+
+    <!-- ===== Team Section ===== -->
+    <section id="Leaders">
+        <h2>Leaders</h2>
+        <div class="Leaders">
+            <!-- Leader 1 -->
+            <div class="leader">
+                <strong>Oualid JAABARI</strong><br>
+                Leader
+                <br>
+                <a href="https://www.instagram.com/oualid_jaabari?igsh=eTBuY3owZmx1dHF6" target="_blank" class="insta-link">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="IG" class="insta-icon">
+                    Instagram
+                </a>
+            </div>
+            <!-- Leader 2 -->
+            <div class="leader">
+                <strong>Youssef BARKAMBIRI</strong><br>
+                Co-Leader
+                <br>
+                <a href="https://www.instagram.com/its__barkambiri__7?igsh=NXlyZnVxdDgyOGpi" target="_blank" class="insta-link">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="IG" class="insta-icon">
+                    Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Contact Section ===== -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>
+            📧 Gmail : 
+            <a href="mailto:off.kacmesport@gmail.com">off.kacmesport@gmail.com</a><br>
+            💬 Discord : 
+            <a href="https://discord.gg/2tJYp6RWRa" target="_blank">Rejoindre le serveur</a><br>
+            📸 Instagram : 
+            <a href="https://www.instagram.com/kacmesport_off?utm_source=ig_web_button_share_sheet&igsh=MWVyeTQ1emMzMGRwaA==" target="_blank">@kacmesport_off</a>
+        </p>
+    </section>
+
+    <!-- ===== Jersey Section ===== -->
+    <section id="jersey">
+        <h2>Tenu de l'équipe</h2>
+        <p>⚠ n'pas disponible maintenent</p>
+        <img src="https://c.top4top.io/p_3531cyxrw1.png" alt="Jersey" style="max-width:300px; border-radius:10px;">
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        &copy; 2025 KACM Esports. Tous droits réservés.
+    </footer>
+
+    <!-- ===== Modal Join the Team ===== -->
+    <div id="joinModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Choose the game</h2>
+            <div class="games">
+                <!-- Valorant -->
+                <div class="game">
+                    <img src="https://e.top4top.io/p_3528l8rvy0.jpg" alt="Valorant">
+                    <p>Valorant</p>
+                    <a href="https://docs.google.com/forms/d/1LqUMLKMw51bpXnBJM3KyDxO82P7xeCBhV_C--pWUTOM/viewform" target="_blank" class="apply-btn">S'inscrire</a>
+                </div>
+                <!-- Free Fire -->
+                <div class="game">
+                    <img src="https://l.top4top.io/p_352854tch0.jpg" alt="Free Fire">
+                    <p>Free Fire</p>
+                    <a href="https://docs.google.com/forms/d/1bMGOSfNUGnQk-jgwLSlI44zcYNBuf_truTaj7yuPif8/viewform" target="_blank" class="apply-btn">S'inscrire</a>
+                </div>
+                <!-- FC Mobile -->
+                <div class="game">
+                    <img src="https://f.top4top.io/p_3528zoeh61.png" alt="FC Mobile">
+                    <p>FC Mobile</p>
+                    <button class="disabled-btn" disabled>Bientôt disponible</button>
+                </div>
+                <!-- Efootball -->
+                <div class="game">
+                    <img src="https://g.top4top.io/p_3528dw56d2.jpg" alt="Efootball">
+                    <p>Efootball</p>
+                    <button class="disabled-btn" disabled>Bientôt disponible</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Script Modal ===== -->
+    <script>
+        function openModal() {
+            document.getElementById("joinModal").style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById("joinModal").style.display = "none";
+        }
+        window.onclick = function(event) {
+            let modal = document.getElementById("joinModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
