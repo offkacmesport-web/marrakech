@@ -2,397 +2,152 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>KACM Esports</title>
+    <title>KACM Esports Marrakech | Team Esport Maroc</title>
+    <meta name="description" content="KACM Esports est une équipe e-sport marocaine basée à Marrakech. Tournois, recrutement Valorant & Free Fire.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* ===== Reset & Base ===== */
-        body {
-            font-family: Arial, sans-serif;
-            background: #222;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1, h2, h3 {
-            margin: 0 0 15px;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* ===== Header ===== */
-        header {
-            background: #c00;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        header .logo {
-            width: 100px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            font-size: 1.1em;
-            color: #eee;
-        }
-
-        /* ===== Navigation ===== */
-        nav {
-            background: #111;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        nav a, .join-btn {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.2s, background 0.3s;
-        }
-
-        nav a:hover {
-            color: #c00;
-        }
-
-        .join-btn {
-            background: #c00;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .join-btn:hover {
-            background: #900;
-        }
-
-        /* ===== Sections ===== */
-        section {
-            max-width: 900px;
-            margin: 40px auto;
-            background: #333;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        }
-
-        /* ===== Team Section ===== */
-        .team {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .leader {
-            background: #444;
-            padding: 15px;
-            border-radius: 6px;
-            width: 220px;
-            text-align: center;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
-        }
-
-        .leader:hover {
-            transform: scale(1.05);
-            background: #c00;
-            color: #fff;
-        }
-
-        /* Instagram Button for Leaders */
-        .insta-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #fff;
-            background: #c13584; /* لون إنستغرام */
-            padding: 6px 12px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 10px;
-            transition: background 0.3s;
-        }
-
-        .insta-link:hover {
-            background: #e1306c;
-        }
-
-        .insta-icon {
-            width: 18px;
-            height: 18px;
-            border-radius: 4px;
-        }
-
-        /* ===== Contact Section ===== */
-        #contact a {
-            color: #c00;
-            font-weight: bold;
-            display: inline-block;
-            margin: 5px 0;
-        }
-
-        /* ===== Footer ===== */
-        footer {
-            background: #111;
-            color: #ccc;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 20px;
-        }
-
-        /* ===== Modal ===== */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            padding-top: 80px;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            overflow: auto;
-            background: rgba(0,0,0,0.7);
-        }
-
-        .modal-content {
-            background: #333;
-            margin: auto;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 700px;
-            text-align: center;
-            position: relative;
-        }
-
-        .close {
-            position: absolute;
-            right: 15px; top: 10px;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            color: #fff;
-        }
-
-        .close:hover {
-            color: #c00;
-        }
-
-        /* ===== Games in Modal ===== */
-        .games {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .game {
-            background: #444;
-            padding: 15px;
-            border-radius: 6px;
-            width: 180px;
-            text-align: center;
-            transition: transform 0.2s;
-        }
-
-        .game:hover {
-            transform: scale(1.05);
-            background: #c00;
-            color: #fff;
-        }
-
-        .game img {
-            width: 100%;
-            border-radius: 6px;
-            margin-bottom: 10px;
-        }
-
-        .apply-btn, .disabled-btn {
-            display: block;
-            padding: 8px;
-            border-radius: 5px;
-            margin-top: 8px;
-            font-weight: bold;
-            text-decoration: none;
-            color: #fff;
-        }
-
-        .apply-btn {
-            background: #28a745;
-        }
-
-        .apply-btn:hover {
-            background: #218838;
-        }
-
-        .disabled-btn {
-            background: #555;
-            cursor: not-allowed;
-        }
-
-        /* ===== Tournament Logo ===== */
-        .tournament-logo {
-            width: 200px;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    </style>
+    <meta name="theme-color" content="#c00">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- ===== Header ===== -->
+
+    <!-- Header -->
     <header>
-        <img src="./KACM Esports_files/IMG-20250816-WA0004.jpg" alt="KACM Logo" class="logo">
+        <img src="assets/img/logo.jpg" alt="KACM Logo" class="logo">
         <h1>KACM Esports</h1>
         <p>L’équipe Esports officielle de Marrakech</p>
     </header>
 
-    <!-- ===== Navigation ===== -->
+    <!-- Navigation -->
     <nav>
         <a href="#about">À propos</a>
-        <a href="#tournament">TOURNEMENT</a>  <!-- رابط للقسم الجديد -->
-        <a href="#Leaders">Équipe</a>
+        <a href="#tournament">TOURNEMENT</a>
+        <a href="#leaders">Équipe</a>
         <a href="#contact">Contact</a>
         <button class="join-btn" onclick="openModal()">Join the team</button>
     </nav>
 
-    <!-- ===== About Section ===== -->
+    <!-- About -->
     <section id="about">
         <h2>À propos de KACM Esports</h2>
         <p>
             KACM Esports est une équipe passionnée de jeux vidéo basée à Marrakech. 
-            Nous participons à des tournois nationaux et internationaux sur différents jeux compétitifs.
+            Nous participons à des tournois nationaux et internationaux.
         </p>
     </section>
 
-    <!-- ===== TOURNEMENT Section ===== -->
+    <!-- Tournament -->
     <section id="tournament">
-        <img src="https://d.top4top.io/p_3696lcgs62.jpeg" alt="شعار البطولة" class="tournament-logo">  <!-- شعار البطولة هنا -->
+        <img src="assets/img/tournament.jpg" alt="Tournament Logo" class="tournament-logo">
         <h2>TOURNEMENT</h2>
         <p>
-            Découvrez nos tournois passionnants ! Par exemple, rejoignez <strong>E-KECH CUP</strong>, une compétition ramadanesque organisée par KACM Esports.
+            Découvrez nos tournois passionnants comme <strong>E-KECH CUP</strong>.
         </p>
-        <p>
-            Bénéficiez d'une expérience de jeu compétitive avec des prix excitants et une communauté amicale.
-        </p>
-        <button onclick="window.open('https://offkacmesport-web.github.io/E-KECH-CUP-RAMADAN-2026-/', '_blank')" class="join-btn">S'inscrire à E-KECH CUP</button>
+        <button onclick="window.open('https://offkacmesport-web.github.io/E-KECH-CUP-RAMADAN-2026-/', '_blank')" class="join-btn">
+            S'inscrire à E-KECH CUP
+        </button>
     </section>
 
-    <!-- ===== Team Section ===== -->
-    <section id="Leaders">
+    <!-- Team -->
+    <section id="leaders">
         <h2>Leaders</h2>
         <div class="team">
-            <!-- Leader 1 -->
+
             <div class="leader">
                 <strong>Oualid JAABARI</strong><br>
                 Leader
-                <br>
-                <a href="https://www.instagram.com/oualid_jaabari?igsh=eTBuY3owZmx1dHF6" target="_blank" class="insta-link">
-                    <img src="./KACM Esports_files/174855.png" alt="IG" class="insta-icon">
+                <a href="https://www.instagram.com/oualid_jaabari" target="_blank" class="insta-link">
+                    <img src="assets/icons/instagram.png" alt="Instagram" class="insta-icon">
                     Instagram
                 </a>
             </div>
-            <!-- Leader 2 -->
+
             <div class="leader">
                 <strong>Youssef BARKAMBIRI</strong><br>
                 Co-Leader
-                <br>
-                <a href="https://www.instagram.com/its__barkambiri__7?igsh=NXlyZnVxdDgyOGpi" target="_blank" class="insta-link">
-                    <img src="./KACM Esports_files/174855.png" alt="IG" class="insta-icon">
+                <a href="https://www.instagram.com/its__barkambiri__7" target="_blank" class="insta-link">
+                    <img src="assets/icons/instagram.png" alt="Instagram" class="insta-icon">
                     Instagram
                 </a>
             </div>
+
         </div>
     </section>
 
-    <!-- ===== Contact Section ===== -->
+    <!-- Contact -->
     <section id="contact">
         <h2>Contact</h2>
         <p>
-            📧 Gmail : 
-            <a href="mailto:off.kacmesport@gmail.com">off.kacmesport@gmail.com</a><br>
-            💬 Discord : 
-            <a href="https://discord.gg/2tJYp6RWRa" target="_blank">Rejoindre le serveur</a><br>
-            📸 Instagram : 
-            <a href="https://www.instagram.com/kacmesport_off?utm_source=ig_web_button_share_sheet&amp;igsh=MWVyeTQ1emMzMGRwaA==" target="_blank">@kacmesport_off</a>
+            📧 <a href="mailto:off.kacmesport@gmail.com">off.kacmesport@gmail.com</a><br>
+            💬 <a href="https://discord.gg/2tJYp6RWRa" target="_blank">Discord</a><br>
+            📸 <a href="https://www.instagram.com/kacmesport_off" target="_blank">@kacmesport_off</a>
         </p>
     </section>
 
-    <!-- ===== Jersey Section ===== -->
+    <!-- Jersey -->
     <section id="jersey">
         <h2>Tenu de l'équipe</h2>
-        <p>⚠ n'pas disponible maintenent</p>
-        <img src="./KACM Esports_files/tenu.png" alt="Jersey" style="max-width:300px; border-radius:10px;">
+        <p>⚠ Pas disponible pour le moment</p>
+        <img src="assets/img/jersey.png" alt="Jersey" class="jersey-img">
     </section>
 
-    <!-- ===== Footer ===== -->
+    <!-- Footer -->
     <footer>
         © 2026 KACM Esports. Tous droits réservés.
     </footer>
 
-    <!-- ===== Modal Join the Team ===== -->
+    <!-- Modal -->
     <div id="joinModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">×</span>
             <h2>Choose the game</h2>
+
             <div class="games">
-                <!-- Valorant -->
                 <div class="game">
-                    <img src="./KACM Esports_files/share.jpg" alt="Valorant">
+                    <img src="assets/img/valorant.jpg" alt="Valorant">
                     <p>Valorant</p>
                     <a href="https://docs.google.com/forms/d/1LqUMLKMw51bpXnBJM3KyDxO82P7xeCBhV_C--pWUTOM/viewform" target="_blank" class="apply-btn">S'inscrire</a>
                 </div>
-                <!-- Free Fire -->
+
                 <div class="game">
-                    <img src="./KACM Esports_files/y4gfgfr.jpg" alt="Free Fire">
+                    <img src="assets/img/freefire.jpg" alt="Free Fire">
                     <p>Free Fire</p>
                     <a href="https://docs.google.com/forms/d/1bMGOSfNUGnQk-jgwLSlI44zcYNBuf_truTaj7yuPif8/viewform" target="_blank" class="apply-btn">S'inscrire</a>
                 </div>
-                <!-- FC Mobile -->
+
                 <div class="game">
-                    <img src="./KACM Esports_files/ea-sports-fc-TM-mobile-footbal-icon.png" alt="FC Mobile">
+                    <img src="assets/img/fcmobile.png" alt="FC Mobile">
                     <p>FC Mobile</p>
-                    <button class="disabled-btn" disabled="">Bientôt disponible</button>
+                    <button class="disabled-btn" disabled>Bientôt disponible</button>
                 </div>
-                <!-- Efootball -->
+
                 <div class="game">
-                    <img src="./KACM Esports_files/newefootballseason_4337943.jpg" alt="Efootball">
-                    <p>Efootball</p>
-                    <button class="disabled-btn" disabled="">Bientôt disponible</button>
+                    <img src="assets/img/efootball.jpg" alt="eFootball">
+                    <p>eFootball</p>
+                    <button class="disabled-btn" disabled>Bientôt disponible</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ===== Script Modal ===== -->
+    <!-- Script -->
     <script>
         function openModal() {
             document.getElementById("joinModal").style.display = "block";
         }
+
         function closeModal() {
             document.getElementById("joinModal").style.display = "none";
         }
+
         window.onclick = function(event) {
             let modal = document.getElementById("joinModal");
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
+            if (event.target === modal) closeModal();
         }
+
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") closeModal();
+        });
     </script>
+
 </body>
 </html>
